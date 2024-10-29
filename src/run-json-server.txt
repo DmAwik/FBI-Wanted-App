@@ -1,0 +1,1 @@
+npx json-server src/assets/db.json —port 3000

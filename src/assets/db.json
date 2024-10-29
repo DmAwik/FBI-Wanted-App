@@ -1,0 +1,97 @@
+{
+  "commentsList": [
+    {
+      "id": "8",
+      "recordId": "8c34",
+      "content": "Wanted Person 1"
+    },
+    {
+      "id": "1",
+      "recordId": 142,
+      "content": "fd"
+    }
+  ],
+  "editRequests": [
+    {
+      "id": "8c34",
+      "title": "REIKO NAKATA GREENBERG-COLLINS",
+      "images": "https://www.fbi.gov/wanted/parental-kidnappings/reiko-nakata-greenberg-collins/@@images/image/thumb",
+      "ageMin": "22",
+      "ageMax": null,
+      "dateOfBirth": "June 3, 1964",
+      "heightMin": 65,
+      "heightMax": 65,
+      "weight": "110 pounds",
+      "sex": "Female",
+      "placeOfBirth": "Japan",
+      "nationality": null,
+      "caution": null,
+      "description": "Unlawful Flight To Avoid Prosecution - Child Abduction",
+      "scarsAndMarks": null,
+      "race": "asian",
+      "files": "https://www.fbi.gov/wanted/parental-kidnappings/reiko-nakata-greenberg-collins/download.pdf"
+    },
+    {
+      "id": "53ff",
+      "title": "BORIS YAKOVLEVICH LIVSHITS",
+      "images": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits/@@images/image/thumb",
+      "ageMin": null,
+      "ageMax": null,
+      "dateOfBirth": "May 9, 1970",
+      "heightMin": null,
+      "heightMax": null,
+      "weight": null,
+      "sex": "Male",
+      "placeOfBirth": "Leningrad, Russia",
+      "nationality": "Russian",
+      "caution": "<p>Boris Yakovlevich Livshits is wanted for his alleged involvement in the Russian-backed procurement network Serniya/Sertal from 2017 to 2022. Livshits and his co-conspirators allegedly unlawfully sourced, purchased, and shipped military and sensitive dual-use technologies from United States manufacturers to Russian end users. These items included advanced testing equipment used in quantum computing, hypersonic missiles, nuclear weapons development, and other military and space-based military applications.</p>\r\n<p> </p>\r\n<p>Serniya’s clients included the National Research Nuclear University of the Moscow Engineering Physics Institute; the Ministry of Defense; the Foreign Intelligence Service (\"SVR\"); and various components of the Federal Security Service (\"FSB\"), Russia's principal security agency and the main successor agency to the Soviet Union's KGB.</p>\r\n<p> </p>\r\n<p>Livshits allegedly controlled several American and international front companies that operated on behalf of the Serniya Network. These entities conducted no actual business and were allegedly used to obfuscate the role of Russian or sanctioned entities in transactions with American and Western technology companies. Livshits allegedly facilitated the financing and smuggling of tens of thousands of controlled, American-manufactured military grade sniper bullets and rounds.  Livshits was indicted by the United States District Court, Eastern District of New York, Brooklyn, New York, on December 5, 2022, and a federal warrant was issued for his arrest.</p>\r\n<p> </p>",
+      "description": "Conspiracy to Defraud the United States; Conspiracy to Violate the International Emergency Economic Powers Act (IEEPA); Bank Fraud Conspiracy; Wire Fraud Conspiracy; Wire Fraud; Money Laundering Conspiracy; Money Laundering; Conspiracy to Violate the Export Control Reform Act (ECRA); Smuggling Goods from the United States; Failure to File Electronic Export Information",
+      "scarsAndMarks": "matbe",
+      "race": "white",
+      "files": "https://www.fbi.gov/wanted/counterintelligence/boris-yakovlevich-livshits/download.pdf",
+      "new": "1232",
+      "isEdited": true
+    },
+    {
+      "id": "9de5",
+      "title": "ELIZABETH GONZALEZ",
+      "images": "https://www.fbi.gov/wanted/kidnap/elizabeth-gonzalez/@@images/image/thumb",
+      "ageMin": null,
+      "ageMax": null,
+      "dateOfBirth": "August 28, 2009",
+      "heightMin": "12",
+      "heightMax": 61,
+      "weight": "140 pounds",
+      "sex": "Female",
+      "placeOfBirth": "Ogden, Utah",
+      "nationality": "American",
+      "caution": null,
+      "description": "June 30, 2024\r\nMexico City, Mexico",
+      "scarsAndMarks": null,
+      "race": "hispanic",
+      "files": "https://www.fbi.gov/wanted/kidnap/elizabeth-gonzalez/download.pdf",
+      "fd": "12",
+      "isEdited": true
+    },
+    {
+      "id": "0503",
+      "title": "ELIZABETH GONZALEZ",
+      "images": "https://www.fbi.gov/wanted/kidnap/elizabeth-gonzalez/@@images/image/thumb",
+      "ageMin": null,
+      "ageMax": null,
+      "dateOfBirth": "August 28, 2009",
+      "heightMin": "21",
+      "heightMax": 61,
+      "weight": "140 pounds",
+      "sex": "Female",
+      "placeOfBirth": "Ogden, Utah",
+      "nationality": "American",
+      "caution": null,
+      "description": "June 30, 2024\r\nMexico City, Mexico",
+      "scarsAndMarks": null,
+      "race": "hispanic",
+      "files": "https://www.fbi.gov/wanted/kidnap/elizabeth-gonzalez/download.pdf",
+      "isEdited": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<div class="gender-icons">
+  <button
+    type="button"
+    class="gender-button"
+    (click)="setValue('Female')"
+    [ngClass]="{ selected: value === 'Female' }"
+  >
+    <i class="fa-solid fa-person-dress"></i>
+  </button>
+  <button
+    type="button"
+    class="gender-button"
+    (click)="setValue('Male')"
+    [ngClass]="{ selected: value === 'Male' }"
+  >
+    <i class="fa-solid fa-person"></i>
+  </button>
+</div>

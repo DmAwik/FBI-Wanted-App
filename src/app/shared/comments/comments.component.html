@@ -1,0 +1,14 @@
+<div *ngIf="this.commentService.currentComments$ | async as comments">
+  <ul>
+    <li *ngFor="let comment of comments">
+      {{ comment.content }}
+    </li>
+  </ul>
+
+  <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+    <textarea formControlName="content" placeholder="Add a comment"></textarea>
+    <button class="submit-comment" type="submit" [disabled]="commentForm.invalid">
+      Save comment
+    </button>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+.gender-icons {
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.gender-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.gender-button i {
+  font-size: 25px;
+}
+
+.gender-button.selected {
+  background-color: rgb(123, 123, 227);
+}

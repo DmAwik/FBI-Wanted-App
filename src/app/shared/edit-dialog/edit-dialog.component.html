@@ -1,0 +1,198 @@
+<mat-vertical-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <div class="flex-container">
+        <ng-template matStepLabel>edit</ng-template>
+
+        <div class="flex-item">
+          <label>Title:</label>
+          <app-input-wrapper formControlName="title" [value]="data.title" placeholder="title">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Images:</label>
+          <app-input-wrapper formControlName="images" [value]="data.images" placeholder="images">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Min Age:</label>
+          <app-input-wrapper formControlName="ageMin" [value]="data.ageMin" placeholder="Min Age">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Max Age:</label>
+          <app-input-wrapper formControlName="ageMax" [value]="data.ageMax" placeholder="Max Age">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Date Of Birthday:</label>
+          <app-input-wrapper
+            formControlName="dateOfBirth"
+            [value]="data.dateOfBirth"
+            placeholder="date Of Birthday"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Min height:</label>
+          <app-input-wrapper
+            formControlName="heightMin"
+            [value]="data.heightMin"
+            placeholder="Min height"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Max height:</label>
+          <app-input-wrapper
+            formControlName="heightMax"
+            [value]="data.heightMax"
+            placeholder="Max height"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Weight:</label>
+          <app-input-wrapper formControlName="weight" [value]="data.weight" placeholder="weight">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Place Of Birth:</label>
+          <app-input-wrapper
+            formControlName="placeOfBirth"
+            [value]="data.placeOfBirth"
+            placeholder="place Of Birth"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Nationality:</label>
+          <app-input-wrapper
+            formControlName="nationality"
+            [value]="data.nationality"
+            placeholder="nationality"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Caution:</label>
+          <app-input-wrapper formControlName="caution" [value]="data.caution" placeholder="caution">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Description:</label>
+          <app-input-wrapper
+            formControlName="description"
+            [value]="data.description"
+            placeholder="description"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Scars And Marks:</label>
+          <app-input-wrapper
+            formControlName="scarsAndMarks"
+            [value]="data.scarsAndMarks"
+            placeholder="scars And Marks"
+          >
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Race:</label>
+          <app-input-wrapper formControlName="race" [value]="data.race" placeholder="race">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Files:</label>
+          <app-input-wrapper formControlName="files" [value]="data.files" placeholder="files">
+          </app-input-wrapper>
+        </div>
+
+        <div class="flex-item">
+          <label>Gender:</label>
+          <app-gender-wrapper class="flex-item" formControlName="sex"></app-gender-wrapper>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>add</ng-template>
+      <div formArrayName="fields" *ngFor="let field of fields.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="flex-container">
+            <div class="flex-item">
+              <label>Field Name:</label>
+              <app-input-wrapper
+                [errorMessages]="editFieldsErrors"
+                formControlName="fieldName"
+                placeholder="Field Name"
+              >
+              </app-input-wrapper>
+            </div>
+
+            <div class="flex-item">
+              <label>Field Type:</label>
+              <app-select-wrapper
+                [options]="selectEditOptions"
+                formControlName="fieldType"
+                placeholder="Field Type"
+              ></app-select-wrapper>
+            </div>
+
+            <div class="flex-item">
+              <label>Field Value:</label>
+              <app-input-wrapper
+                [errorMessages]="editFieldsErrors"
+                formControlName="fieldValue"
+                placeholder="Field Value"
+              >
+              </app-input-wrapper>
+            </div>
+
+            <div class="flex-item">
+              <label>Actions:</label>
+              <div class="edit-buttons">
+                <button mat-icon-button (click)="removeField(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button (click)="editField(i)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-icon-button (click)="addField()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <div class="buttons">
+        <button mat-button matStepperPrevious>Back</button>
+        <div>
+          <button mat-button (click)="onSave()">Save</button>
+        </div>
+        <div>
+          <button mat-button (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+</mat-vertical-stepper>

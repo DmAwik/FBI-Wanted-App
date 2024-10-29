@@ -1,0 +1,128 @@
+<div class="information-container">
+  <mat-tab-group>
+    <mat-tab label="Original">
+      <form [formGroup]="form">
+        <div formArrayName="columnsArray">
+          <div class="horizontal-label-wrapper">
+            <label
+              *ngFor="let columnCtrl of columnsArray.controls; let i = index"
+              class="inline-label"
+            >
+              <app-input-wrapper
+                formControlName="{{ i }}"
+                [type]="'checkbox'"
+                [checked]="columns[i].visible"
+              ></app-input-wrapper>
+              <span class="label-text">{{ columns[i].label }}</span>
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <div class="brief-information">
+        <ng-container *ngIf="paginatorService.paginatedData$ | async as paginatedData">
+          <div class="filters-container">
+            <app-input-wrapper
+              [formControl]="titleControl"
+              placeholder="Filter by title"
+            ></app-input-wrapper>
+
+            <app-input-wrapper
+              [formControl]="genderControl"
+              placeholder="Filter by gender"
+            ></app-input-wrapper>
+
+            <app-input-wrapper
+              [formControl]="birthControl"
+              placeholder="Filter by place of birth"
+            ></app-input-wrapper>
+          </div>
+          <table>
+            <thead>
+              <tr
+                cdkDropList
+                cdkDropListOrientation="horizontal"
+                (cdkDropListDropped)="drop($event)"
+              >
+                <th
+                  *ngFor="let column of columns"
+                  [ngClass]="{ 'hidden-column': !column.visible }"
+                  cdkDrag
+                >
+                  {{ column.label }}
+                </th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of filteredData | async">
+                <ng-container *ngFor="let column of columns">
+                  <td *ngIf="column.visible">
+                    {{ item[column.property] | defaultData }}
+                  </td>
+                </ng-container>
+                <td><button (click)="editItem(item)">Edit Details</button></td>
+                <td><button (click)="toggleDetails(item)">Show Details</button></td>
+                <td>
+                  <ng-container *ngIf="item.isEdited">
+                    <mat-icon>edit</mat-icon>
+                  </ng-container>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <app-paginator></app-paginator>
+        </ng-container>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Edited">
+      <div class="brief-information">
+        <ng-container *ngIf="editDialogService.editedData$ | async as editedData">
+          <table>
+            <thead>
+              <tr>
+                <th>ФИО</th>
+                <th>Место рождения</th>
+                <th>Пол</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of editedData">
+                <td>{{ item.title | defaultData }}</td>
+                <td>{{ item.placeOfBirth | defaultData }}</td>
+                <td>{{ item.gender | defaultData }}</td>
+                <td><button (click)="toggleDetails(item)">Show Details</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="detail-information" *ngIf="selectedItem">
+    <div class="detail-information__content">
+      <button class="details-button" (click)="hideDetails()">Hide details</button>
+      <div *ngFor="let key of objectKeys(selectedItem)">
+        <ng-container [ngSwitch]="key">
+          <div *ngSwitchCase="'images'">
+            <img src="{{ selectedItem[key] }}" alt="image not found" />
+          </div>
+          <div *ngSwitchCase="'files'">
+            files:
+            <a href="{{ selectedItem[key] | defaultData }}">
+              {{ selectedItem[key] | defaultData }}</a
+            >
+          </div>
+          <div *ngSwitchCase="'id'">
+            <app-comments [recordId]="selectedItem[key]"></app-comments>
+          </div>
+          <div *ngSwitchCase="'isEdited'"></div>
+          <div *ngSwitchDefault>{{ key }}: {{ selectedItem[key] | defaultData }}</div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

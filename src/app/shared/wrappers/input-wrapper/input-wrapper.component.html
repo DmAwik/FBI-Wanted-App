@@ -1,0 +1,13 @@
+<input
+  class="authentication-form__input"
+  [type]="type"
+  [checked]="checked"
+  [value]="value"
+  [placeholder]="placeholder"
+  [formControl]="control"
+  (blur)="onBlur()"
+/>
+
+<span class="error" *ngIf="currentErrors && control.touched">
+  {{ currentErrors | getError : errorMessages }}</span
+>

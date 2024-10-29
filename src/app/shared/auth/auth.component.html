@@ -1,0 +1,23 @@
+<form class="authentication-form" [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+  <button class="authentication-form__close-button" type="button" (click)="closeDialog()">X</button>
+
+  <div class="authentication-form__group">
+    <label class="authentication-form__label">Login</label><br />
+    <app-input-wrapper
+      [errorMessages]="errorTranslations"
+      formControlName="userLogin"
+    ></app-input-wrapper>
+  </div>
+
+  <div class="authentication-form__group">
+    <label class="authentication-form__label">Password</label><br />
+    <app-input-wrapper
+      [errorMessages]="errorTranslations"
+      formControlName="userPassword"
+    ></app-input-wrapper>
+  </div>
+  <span class="authentication-form__error" *ngIf="!isNotLoginError"
+    >Invalid username or password</span
+  >
+  <button class="authentication-form__submit-button">Отправить</button>
+</form>

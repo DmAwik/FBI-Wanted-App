@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="logo">
+    <h1>FBI-Wanted</h1>
+  </div>
+
+  <ng-container *ngIf="authService.isLoggedIn$ | async; then LogedOut; else LogedIn">
+  </ng-container>
+
+  <ng-template #LogedIn>
+    <button class="auth-buttons" (click)="login()">Log In</button>
+  </ng-template>
+
+  <ng-template #LogedOut>
+    <button class="auth-buttons" (click)="logout()">Log Out</button>
+  </ng-template>
+</header>
